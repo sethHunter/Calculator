@@ -12,8 +12,8 @@
   display: grid;
   margin-top: 5rem;
   justify-content: center;
-  grid-template-columns: repeat(5, 8rem);
-  grid-template-rows: minmax(7rem, auto) repeat(5, 7rem);
+  grid-template-columns: repeat(6, 8rem);
+  grid-template-rows: minmax(7rem, auto) repeat(6, 7rem);
 }
 
 .calculator-grid > button {
@@ -31,6 +31,10 @@
 
 .span-two {
   grid-column: span 2;
+}
+
+.span-three {
+  grid-column: span 3;
 }
 
 .output {

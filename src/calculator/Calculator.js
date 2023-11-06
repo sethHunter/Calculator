@@ -18,69 +18,58 @@ export default function Calculator() {
             {operand}
           </div>
         </div>
-
+        <DigitButton digit="cos" dispatch={dispatch} />
+        <DigitButton digit="tan" dispatch={dispatch} />
+        <DigitButton digit="(" dispatch={dispatch} />
+        <DigitButton digit=")" dispatch={dispatch} />
         <button
           className="span-two"
           onClick={() => dispatch({ type: ACTIONS.CLEAR })}
         >
           AC
         </button>
-        <button onClick={() => dispatch({ type: ACTIONS.DELETE_DIGIT })}>
-          DEL
-        </button>
-        <DigitButton digit="!" dispatch={dispatch} />
-        <DigitButton digit="x" dispatch={dispatch} />
 
+        <DigitButton digit="csc" dispatch={dispatch} />
+        <DigitButton digit="sec" dispatch={dispatch} />
         <DigitButton digit="1" dispatch={dispatch} />
         <DigitButton digit="2" dispatch={dispatch} />
         <DigitButton digit="3" dispatch={dispatch} />
-        <DigitButton digit="(" dispatch={dispatch} />
-        <DigitButton digit=")" dispatch={dispatch} />
+        <OperationButton operation="÷" dispatch={dispatch} />
 
+        <DigitButton digit="cot" dispatch={dispatch} />
+        <DigitButton digit="sin" dispatch={dispatch} />
         <DigitButton digit="4" dispatch={dispatch} />
         <DigitButton digit="5" dispatch={dispatch} />
         <DigitButton digit="6" dispatch={dispatch} />
-        <OperationButton operation="+" dispatch={dispatch} />
-        <OperationButton operation="-" dispatch={dispatch} />
-        
+        <OperationButton operation="*" dispatch={dispatch} />
 
+        <DigitButton digit="<" dispatch={dispatch} />
+        <DigitButton digit=">" dispatch={dispatch} />
         <DigitButton digit="7" dispatch={dispatch} />
         <DigitButton digit="8" dispatch={dispatch} />
         <DigitButton digit="9" dispatch={dispatch} />
-        <OperationButton operation="*" dispatch={dispatch} />
-        <OperationButton operation="÷" dispatch={dispatch} />
+        <OperationButton operation="-" dispatch={dispatch} />
 
-        <DigitButton digit="." dispatch={dispatch} />
+        <DigitButton digit="≤" dispatch={dispatch} />
+        <DigitButton digit="≥" dispatch={dispatch} />
+        <DigitButton digit="!" dispatch={dispatch} />
         <DigitButton digit="0" dispatch={dispatch} />
-        <DigitButton digit="=" dispatch={dispatch} />
+        <DigitButton digit="." dispatch={dispatch} />
+        <OperationButton operation="+" dispatch={dispatch} />
+        
+        <DigitButton digit="x" dispatch={dispatch} />
+        <button className="span-two" onClick={() => dispatch({ type: ACTIONS.DELETE_DIGIT })}>
+          DELETE
+        </button>
         <button
-          className="span-two"
+          className="span-three"
           onClick={() => dispatch({ type: ACTIONS.SOLVE })}
         >
-          Solve
+          =
         </button>
+        {/* <DigitButton digit="=" dispatch={dispatch} /> */}
+        {/* <DigitButton digit="y" dispatch={dispatch} /> TODO will set up another function to graph when wanted*/}
 
-        {/* <button>y</button> */}
-        {/* <button>(</button>
-      <button>)</button> */}
-        {/* <button>Less than</button>
-      <button>More than</button>
-      <button>≤</button>
-      <button>≥</button>
-      <button>|a|</button>
-      <button>√</button>
-      <button>sin</button>
-      <button>cos</button>
-      <button>tan</button>
-      <button>csc</button>
-      <button>sec</button>
-      <button>cot</button>
-      <button>sin-1</button>
-      <button>cos-1</button>
-      <button>tan-1</button>
-      <button>csc-1</button>
-      <button>sec-1</button>
-      <button>cot-1</button> */}
       </div>
       <div className="graph">
         <Plot
