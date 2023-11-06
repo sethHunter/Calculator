@@ -3,6 +3,7 @@ import OperationButton from "./OperationButton";
 import { useReducer } from "react";
 import "./calculator.css";
 import Plot from "../graph/Plot";
+import { Box } from "@mui/material";
 
 export default function Calculator() {
   const [{ operand }, dispatch] = useReducer(
@@ -11,7 +12,7 @@ export default function Calculator() {
   );
 
   return (
-    <div className="base">
+    <Box sx={{display: 'flex', flexDirection: 'row'}}>
       <div className="calculator-grid">
         <div className="output">
           <div className="previous-operand">
@@ -71,20 +72,20 @@ export default function Calculator() {
         {/* <DigitButton digit="y" dispatch={dispatch} /> TODO will set up another function to graph when wanted*/}
 
       </div>
-      <div className="graph">
-        <Plot
+      <div>
+        <Plot className = "function-plot"
           options={{
             grid: true,
             yAxis: { domain: [-5, 5] },
             data: [
               {
-                fn: operand,
+                fn: operand, color: "white"
               },
             ],
           }}
         />
       </div>
-    </div>
+    </Box>
   );
 }
 
@@ -134,18 +135,27 @@ function reducer(state, { type, payload }) {
         };
       }
       if (payload.digit === "0" && state.operand === "0") return state;
+
       if (payload.digit === "." && !state.operand)
         return {
           ...state,
           operand: `0${payload.digit}`,
         };
+
       if (payload.digit === "." && state.operand.includes("."))
         return state;
 
-      return {
-        ...state,
-        operand: `${state.operand || ""}${payload.digit}`,
-      };
+        if (payload.digit.includes("sin") || payload.digit.includes("tan") || payload.digit.includes("csc") || payload.digit.includes("sec") || payload.digit.includes("cot") || payload.digit.includes("sin")) {
+          return {
+            ...state,
+            operand:`${state.operand || ""}${payload.digit}` + '(',
+          };
+        } else {
+          return {
+            ...state,
+            operand: `${state.operand || ""}${payload.digit}`,
+          };
+        }
 
     case ACTIONS.OPERATION:
       if (state.operand != null) {
