@@ -4,7 +4,7 @@ import Calculator from "./calculator/Calculator.js";
 
 function App() {
   return (
-    <div>
+    <div className="base">
       <Calculator />
     </div>
   );
