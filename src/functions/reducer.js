@@ -34,7 +34,7 @@ const reducer = (state, { type, payload }) => {
         payload.digit.includes("csc") ||
         payload.digit.includes("sec") ||
         payload.digit.includes("cot") ||
-        payload.digit.includes("sin")
+        payload.digit.includes("cos")
       ) {
         return {
           ...state,
