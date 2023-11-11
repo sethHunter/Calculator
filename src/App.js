@@ -1,11 +1,11 @@
 import "./styles.css";
-import Calculator from "./components/calculator/Calculator.js";
 import { Container } from "@mui/material";
+import CalculatorPage from "./components/calculatorPage/CalculatorPage";
 
 const App = () => {
   return (
     <Container>
-      <Calculator />
+      <CalculatorPage />
     </Container>
   );
 };
