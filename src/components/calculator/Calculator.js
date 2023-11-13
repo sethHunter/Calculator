@@ -1,17 +1,17 @@
-import React, { useReducer } from "react";
-import { Box } from "@mui/material";
+import React from "react";
 import "./calculator.css";
 import DigitButton from "./DigitButton";
 import OperationButton from "./OperationButton";
 import { ACTIONS } from "../../constants";
+import { Box } from "@mui/material";
 import PropTypes from "prop-types";
 
-const Calculator = ({ operand, dispatch }) => {
+const Calculator = ({operand, dispatch}) => {
   return (
     <div className="calculator-grid">
-      <div className="output">
-        <div className="previous-operand">{operand}</div>
-      </div>
+      <Box className="output">
+        <div className="operand">{operand}</div>
+      </Box>
       <DigitButton digit="cos" dispatch={dispatch} />
       <DigitButton digit="tan" dispatch={dispatch} />
       <DigitButton digit="(" dispatch={dispatch} />
@@ -64,8 +64,6 @@ const Calculator = ({ operand, dispatch }) => {
       >
         =
       </button>
-      {/* <DigitButton digit="=" dispatch={dispatch} /> */}
-      {/* <DigitButton digit="y" dispatch={dispatch} /> TODO will set up another function to graph when wanted*/}
     </div>
   );
 };
@@ -81,14 +79,3 @@ Calculator.propTypes = {
 };
 
 export default Calculator;
-
-// const INTERGER_FORMATTER = new Intl.NumberFormat("en-us", {
-//   maximumFractionDigits: 0,
-// });
-
-// function formatOperand(operand) {
-//   if (operand == null) return;
-//   const [integer, decimal] = operand.split(".");
-//   if (decimal == null) return INTERGER_FORMATTER.format(integer);
-//   return `${INTERGER_FORMATTER.format(integer)}.${decimal}`;
-// }

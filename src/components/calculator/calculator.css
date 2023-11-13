@@ -3,17 +3,12 @@
   justify-content: center;
 }
 
-.graph {
-  margin: 5rem;
-  background-color: white;
-}
-
 .calculator-grid {
   display: grid;
   margin-top: 5rem;
   justify-content: center;
   grid-template-columns: repeat(6, 8rem);
-  grid-template-rows: minmax(7rem, auto) repeat(6, 7rem);
+  grid-template-rows: minmax(7rem, auto) repeat(7, 7rem);
 }
 
 .calculator-grid > button {
@@ -39,27 +34,30 @@
 
 .output {
   grid-column: 1 / -1;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(255, 255, 255, 0.55);
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   justify-content: space-around;
   padding: 0.5rem;
+  align-items: flex-end;
   word-wrap: break-word;
   word-break: break-all;
 }
 
-.output .previous-operand {
-  color: rgb(255, 255, 255);
+.output .operand {
+  color: rgb(0, 0, 0);
   font-size: 2rem;
 }
 
-.output .current-operand {
-  color: rgba(255, 255, 255);
-  font-size: 3rem;
+.graph {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.function-plot {
-  margin-top: 5rem;
+line {
   color: rgb(255, 255, 255);
+  stroke: rgb(255, 255, 255);
 }

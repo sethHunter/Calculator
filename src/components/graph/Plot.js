@@ -2,11 +2,12 @@ import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import functionPlot from "function-plot";
 
-const Plot = ({ options }) => {
+const Plot = ({ options, operand }) => {
   const rootEl = useRef(null);
 
   useEffect(() => {
     try {
+      if(String(operand) === "function String() { [native code] }" ) throw Error
       functionPlot(Object.assign({}, options, { target: rootEl.current }));
     } catch (err) {
       functionPlot(
@@ -16,7 +17,7 @@ const Plot = ({ options }) => {
             ...options,
             target: '#vector',
             grid: true,
-            yAxis: { domain: [-5, 5] },
+            yAxis: { domain: [-5, 5]},
             data: [
               {
                 vector: [0, 0],
@@ -30,7 +31,7 @@ const Plot = ({ options }) => {
         )
       );
     }
-  }, [options]);
+  }, [options, operand]);
 
   return <div ref={rootEl} />;
 };

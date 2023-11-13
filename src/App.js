@@ -1,11 +1,19 @@
 import "./styles.css";
-import { Container } from "@mui/material";
-import CalculatorPage from "./components/calculatorPage/CalculatorPage";
+import { Box, Container } from "@mui/material";
+import Calculator from "./components/calculator/Calculator";
+import { useReducer } from "react";
+import Graph from "./components/graph/Graph";
+import reducer from "./functions/reducer.js";
 
 const App = () => {
+  const [{ operand }, dispatch] = useReducer(reducer, {});
+
   return (
     <Container>
-      <CalculatorPage />
+      <Box sx={{ display: "flex", flexDirection: "row" }}>
+        <Calculator operand={operand} dispatch={dispatch} />
+        <Graph operand={operand} />
+      </Box>
     </Container>
   );
 };
