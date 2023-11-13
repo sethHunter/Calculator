@@ -15,7 +15,7 @@ const Graph = ({operand}) => {
           data: [
             {
               fn: String(operand),
-              color: "white",
+              color: "cyan",
             },
           ],
         }}

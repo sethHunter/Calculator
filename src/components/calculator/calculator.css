@@ -21,7 +21,7 @@
 
 .calculator-grid > button:hover,
 .calculator-grid > button:focus {
-  background-color: rgba(203, 249, 209, 0.9);
+  background-color: rgba(123, 254, 248, 0.8);
 }
 
 .span-two {
