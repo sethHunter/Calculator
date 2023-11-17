@@ -21,7 +21,7 @@
 
 .calculator-grid > button:hover,
 .calculator-grid > button:focus {
-  background-color: rgba(123, 254, 248, 0.8);
+  background-color: rgba(248, 163, 103, 0.80);
 }
 
 .span-two {
@@ -47,17 +47,4 @@
 .output .operand {
   color: rgb(0, 0, 0);
   font-size: 2rem;
-}
-
-.graph {
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-line {
-  color: rgb(255, 255, 255);
-  stroke: rgb(255, 255, 255);
 }

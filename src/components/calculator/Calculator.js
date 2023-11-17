@@ -6,7 +6,7 @@ import { ACTIONS } from "../../constants";
 import { Box } from "@mui/material";
 import PropTypes from "prop-types";
 
-const Calculator = ({operand, dispatch}) => {
+const Calculator = ({ operand, dispatch }) => {
   return (
     <div className="calculator-grid">
       <Box className="output">
@@ -37,23 +37,22 @@ const Calculator = ({operand, dispatch}) => {
       <DigitButton digit="6" dispatch={dispatch} />
       <OperationButton operation="*" dispatch={dispatch} />
 
-      <DigitButton digit="<" dispatch={dispatch} />
-      <DigitButton digit=">" dispatch={dispatch} />
+      <DigitButton digit="√" dispatch={dispatch} />
+      <DigitButton digit="π" dispatch={dispatch} />
       <DigitButton digit="7" dispatch={dispatch} />
       <DigitButton digit="8" dispatch={dispatch} />
       <DigitButton digit="9" dispatch={dispatch} />
       <OperationButton operation="-" dispatch={dispatch} />
 
-      <DigitButton digit="≤" dispatch={dispatch} />
-      <DigitButton digit="≥" dispatch={dispatch} />
+      <DigitButton digit="^" dispatch={dispatch} />
+      <DigitButton digit="x" dispatch={dispatch} />
       <DigitButton digit="!" dispatch={dispatch} />
       <DigitButton digit="0" dispatch={dispatch} />
       <DigitButton digit="." dispatch={dispatch} />
       <OperationButton operation="+" dispatch={dispatch} />
 
-      <DigitButton digit="x" dispatch={dispatch} />
       <button
-        className="span-two"
+        className="span-three"
         onClick={() => dispatch({ type: ACTIONS.DELETE_DIGIT })}
       >
         DELETE

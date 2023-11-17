@@ -26,6 +26,20 @@ const reducer = (state, { type, payload }) => {
           operand: `0${payload.digit}`,
         };
 
+      if(payload.digit === "√") {
+        return {
+          ...state,
+          operand: `${state.operand || ""}sqrt(`
+        }
+      }
+
+      if(payload.digit === "π") {
+        return {
+          ...state,
+          operand: `${state.operand || ""}PI`
+        }
+      }
+
       if (payload.digit === "." && state.operand.includes(".")) return state;
 
       if (
@@ -34,7 +48,7 @@ const reducer = (state, { type, payload }) => {
         payload.digit.includes("csc") ||
         payload.digit.includes("sec") ||
         payload.digit.includes("cot") ||
-        payload.digit.includes("cos")
+        payload.digit.includes("cos") 
       ) {
         return {
           ...state,

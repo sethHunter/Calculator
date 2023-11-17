@@ -1,25 +1,46 @@
-import { Box } from "@mui/material";
+import { Box, Card } from "@mui/material";
 import PropTypes from "prop-types";
 import Plot from "./Plot";
+import "./graph.css"
 
-const Graph = ({operand}) => {
+const Graph = ({ operand }) => {
   return (
-    <Box className="graph">
-      <h1>Graphing: {operand}</h1>
-      <Plot
-        className="function-plot"
-        operand={operand}
-        options={{
-          grid: true,
-          yAxis: { domain: [-5, 5] },
-          data: [
-            {
-              fn: String(operand),
-              color: "cyan",
-            },
-          ],
+    <Box
+      sx={{
+        color: "rgb(255, 255, 255)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+      }}
+    >
+      <Card sx={{margin: "2rem", color: "white", backgroundColor: "rgba(0, 0, 0, 0)"}}>
+        <h1>Graphing</h1>
+      </Card>
+
+      <Card
+        className="graph"
+        sx={{
+          color: "rgb(255, 255, 255)",
+          stroke: "rgb(255, 255, 255)",
+          margin: "1rem",
+          backgroundColor: "rgba(0, 0, 0, .3)"   
         }}
-      />
+      >
+        <Plot
+          operand={operand}
+          options={{
+            grid: true,
+            yAxis: { domain: [-5, 5] },
+            data: [
+              {
+                fn: String(operand),
+                color: "darkorange",
+              },
+            ],
+          }}
+        />
+      </Card>
     </Box>
   );
 };
@@ -27,7 +48,6 @@ const Graph = ({operand}) => {
 Graph.defaultProps = {
   operand: String,
 };
-
 
 Graph.propTypes = {
   operand: PropTypes.any,
