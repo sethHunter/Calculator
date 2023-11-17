@@ -1,3 +1,5 @@
+// Solves math functions
+
 const evaluate = ({ operand }) => {
   try {
     const math = require("mathjs");

@@ -1,6 +1,7 @@
 import { ACTIONS } from "../constants";
 import evaluate from "./evaluate";
 
+// Function that handles input form the calculator 
 const reducer = (state, { type, payload }) => {
   switch (type) {
     case ACTIONS.ADD_DIGIT:
@@ -60,27 +61,7 @@ const reducer = (state, { type, payload }) => {
           operand: `${state.operand || ""}${payload.digit}`,
         };
       }
-
-    case ACTIONS.OPERATION:
-      if (state.operand != null) {
-        if (payload.operation === "÷") {
-          return {
-            ...state,
-            operand: `${state.operand || ""}/`,
-          };
-        } else {
-          return {
-            ...state,
-            operand: `${state.operand || ""}${payload.operation}`,
-          };
-        }
-      } else {
-        return {
-          ...state,
-          operand: state.operand,
-        };
-      }
-
+      
     case ACTIONS.CLEAR:
       return {};
 

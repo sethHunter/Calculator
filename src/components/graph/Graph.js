@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Plot from "./Plot";
 import "./graph.css"
 
+// Graph UI
 const Graph = ({ operand }) => {
   return (
     <Box

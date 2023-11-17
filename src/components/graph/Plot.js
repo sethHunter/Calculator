@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import functionPlot from "function-plot";
 
+// Function used to to use function-plot to graphW
 const Plot = ({ options, operand }) => {
   const rootEl = useRef(null);
 
