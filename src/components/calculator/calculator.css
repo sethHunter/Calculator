@@ -5,10 +5,9 @@
 
 .calculator-grid {
   display: grid;
-  margin-top: 5rem;
   justify-content: center;
   grid-template-columns: repeat(6, 8rem);
-  grid-template-rows: minmax(7rem, auto) repeat(7, 7rem);
+  grid-template-rows: minmax(7rem, auto) repeat(6, 7rem);
 }
 
 .calculator-grid > button {

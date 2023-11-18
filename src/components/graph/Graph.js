@@ -1,7 +1,7 @@
 import { Box, Card } from "@mui/material";
 import PropTypes from "prop-types";
 import Plot from "./Plot";
-import "./graph.css"
+import "./graph.css";
 
 // Graph UI
 const Graph = ({ operand }) => {
@@ -15,7 +15,17 @@ const Graph = ({ operand }) => {
         flexDirection: "column",
       }}
     >
-      <Card sx={{margin: "2rem", color: "white", backgroundColor: "rgba(0, 0, 0, 0)"}}>
+      <Card
+        sx={{
+          margin: "2rem",
+          color: "white",
+          backgroundColor: "rgba(0, 0, 0, 0)",
+          borderBottom: 2,
+          borderColor: "orange",
+          paddingLeft: "4rem",
+          paddingRight: "4rem",
+        }}
+      >
         <h1>Graphing</h1>
       </Card>
 
@@ -25,7 +35,9 @@ const Graph = ({ operand }) => {
           color: "rgb(255, 255, 255)",
           stroke: "rgb(255, 255, 255)",
           margin: "1rem",
-          backgroundColor: "rgba(0, 0, 0, .3)"   
+          backgroundColor: "rgba(0, 0, 0, .3)",
+          border: 1,
+          borderColor: "orange",
         }}
       >
         <Plot
